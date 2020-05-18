@@ -1,9 +1,8 @@
 from torch_scatter import scatter_mean
 from torch_geometric.datasets import TUDataset, Planetoid
 from torch_geometric.data import DataLoader
-'''
-Load dataset
-'''
+
+################################ Load dataset ####################################
 # Benchmark dataset for semi-supervised graph node classification
 planetoid = Planetoid(root='/media/lepoeme20/Data/graphs/', name='Cora')
 
@@ -24,9 +23,7 @@ print(data.val_mask.sum().item())
 print(data.test_mask.sum().item())
 
 
-'''
-Mini-batches
-'''
+############################### Mini-batches ###################################
 dataset = TUDataset(root='/media/lepoeme20/Data/graphs/', name='ENZYMES', use_node_attr=True)
 
 # print dataset volumn
